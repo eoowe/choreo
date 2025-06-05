@@ -40,30 +40,21 @@ function runNezha() {
   let tlsPorts = ['443', '8443', '2096', '2087', '2083', '2053'];
   
   if (NEZHA_SERVER && NEZHA_PORT && NEZHA_KEY) {
-    // 检测哪吒v0是否开启TLS
     const NEZHA_TLS = tlsPorts.includes(NEZHA_PORT) ? '--tls' : '';
     command = `nohup ./swith -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} >/dev/null 2>&1 &`;
   } else if (NEZHA_SERVER && NEZHA_KEY) {
     command = `nohup ./v1 -c config.yaml >/dev/null 2>&1 &`;
   } else {
     console.log('NEZHA variable is empty, skip running');
-    setTimeout(() => {
-      runWeb();
-    }, 2000);
-    return;
+    runWeb();
   }
 
   try {
-    exec(command, { shell: '/bin/bash' }, (err) => {
-      if (err) {
-        console.error('npm running error:', err);
-      } else {
-        console.log('npm is running');
-      }
-      setTimeout(() => {
-        runWeb();
-      }, 2000);
-    });
+    exec(command);
+    console.log('npm is running');
+    setTimeout(() => {
+      runWeb();
+    }, 2000);
   } catch (error) {
     console.error(`error: ${error}`);
   }
