@@ -8,7 +8,7 @@ const NEZHA_PORT = process.env.NEZHA_PORT || '';
 const NEZHA_KEY = process.env.NEZHA_KEY || 'nezhakey123';
 const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'choreo.vvx.dpdns.org';
 const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiOGI5NzI0MDgwZTU1ZTcwMzcwZmI3NDI4NzkyMmYzMWIiLCJ0IjoiZThkM2IzYTEtM2FkNC00YzI5LWFjMjktOWM0YzdmYWJiMmJmIiwicyI6Ill6a3daR0UzTWpndE5EZzBNeTAwT1RaaUxUZ3hOR1V0WVdVME5ERmhOMlF4WldGbSJ9';
-const CFIP = process.env.CFIP || 'ip.sb'; 
+const CFIP = process.env.CFIP || 'time.is'; 
 const NAME = process.env.NAME || 'Choreo';
 
 // root route
