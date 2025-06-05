@@ -142,8 +142,12 @@
             }
         }
     ],
-   "dns": { "servers": ["https+local://8.8.8.8/dns-query"] },
-   "outbounds": [
+    "dns":{
+        "servers":[
+            "https+local://8.8.8.8/dns-query"
+        ]
+    },
+    "outbounds": [
         {
             "protocol": "freedom",
             "tag": "direct"
